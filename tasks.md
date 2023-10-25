@@ -18,7 +18,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona';
 
 3) What are the names of the Scottish divisions included?
 
-Scottish League One, Scottish Premiership, Scottish Championship
+    Scottish League One, Scottish Premiership, Scottish Championship
 ```sql
 SELECT DISTINCT name FROM divisions WHERE country = 'Scotland';
 
@@ -36,7 +36,7 @@ SELECT COUNT(*) FROM matches WHERE division_code='D1' AND (hometeam='Freiburg' O
 
 5)  Find the teams which include the word "City" in their name. HINT: Not every team has been entered into the database with their full name, eg. `Norwich City` are listed as `Norwich`. If your query is correct it should return four teams.
 
-    Bath City, Man City, Edinburgh City Bristol City
+    Bath City, Man City, Edinburgh City, Bristol City
 
 ```sql
 SELECT DISTINCT hometeam FROM matches WHERE hometeam LIKE '%City%';
@@ -80,7 +80,7 @@ SELECT * FROM matches WHERE division_code = 'E0' ORDER BY (fthg+ftag) DESC,fthg 
 
 10) Find the name of the division in which the most goals were scored in a single season and the year in which it happened.
 
-    National League,EC, 2013 Season, 1592 goals
+    National League, EC, 2013 Season, 1592 goals
 
 ```sql
 SELECT season, division_code, SUM(fthg+ftag)
